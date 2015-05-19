@@ -1,25 +1,203 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GO6-nJ-NGa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Chores-->
+        <scene sceneID="uMS-HR-s74">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController storyboardIdentifier="Chores" title="Chores" id="BTp-HF-o4m" customClass="ChoresViewController" customModule="Roomy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vba-hH-UTY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="choreItem" id="b3R-tQ-QRe" customClass="ChoresTableViewCell" customModule="Roomy" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3R-tQ-QRe" id="DTd-Uk-78b">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="400" verticalHuggingPriority="400" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Chore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-uq-RX1">
+                                            <rect key="frame" x="8" y="12" width="499" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-jj-VqY">
+                                            <rect key="frame" x="527" y="2" width="65" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="choreButtonTap:" destination="BTp-HF-o4m" eventType="touchUpInside" id="g6Q-NM-ZGr"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="FUw-uq-RX1" secondAttribute="centerX" id="B8c-Np-LKy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wgQ-jj-VqY" secondAttribute="trailing" id="Drd-Y2-SzC"/>
+                                        <constraint firstItem="FUw-uq-RX1" firstAttribute="leading" secondItem="DTd-Uk-78b" secondAttribute="leadingMargin" id="FMw-UC-dQa"/>
+                                        <constraint firstItem="wgQ-jj-VqY" firstAttribute="leading" secondItem="FUw-uq-RX1" secondAttribute="trailing" constant="20" id="RgZ-T3-eK8"/>
+                                        <constraint firstAttribute="centerY" secondItem="FUw-uq-RX1" secondAttribute="centerY" priority="900" id="g20-Sr-cbC"/>
+                                        <constraint firstAttribute="centerY" secondItem="FUw-uq-RX1" secondAttribute="centerY" id="kzD-s5-ZzO"/>
+                                        <constraint firstAttribute="centerY" secondItem="wgQ-jj-VqY" secondAttribute="centerY" id="lhs-0s-adb"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="B8c-Np-LKy"/>
+                                            <exclude reference="g20-Sr-cbC"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="choreButton" destination="wgQ-jj-VqY" id="D6v-T9-C5d"/>
+                                    <outlet property="choreTitle" destination="FUw-uq-RX1" id="dXy-bs-R4l"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BTp-HF-o4m" id="qFq-B5-xuN"/>
+                            <outlet property="delegate" destination="BTp-HF-o4m" id="gLV-ub-4DZ"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Chores" id="Vv5-Ci-bxe">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="VPp-JL-d4F">
+                            <connections>
+                                <action selector="pina:" destination="BTp-HF-o4m" id="Kxm-SS-J8b"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xDs-ON-aeE">
+                            <connections>
+                                <action selector="addChoreBarButtonTap:" destination="BTp-HF-o4m" id="1UO-Hk-qae"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cS-VJ-uj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1688" y="-14"/>
+        </scene>
+        <!--Login View-->
+        <scene sceneID="d1G-Ta-RLC">
+            <objects>
+                <tabBarController id="GO6-nJ-NGa" customClass="LoginView" customModule="Roomy" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="529-dm-Py2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TYN-6j-sdX" kind="relationship" relationship="viewControllers" id="4Up-Z9-HMY"/>
+                        <segue destination="Lh0-gR-M2K" kind="relationship" relationship="viewControllers" id="Rwg-Ag-PmP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqY-YX-9KS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="286"/>
+        </scene>
+        <!--Chores-->
+        <scene sceneID="zWQ-hs-akl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYN-6j-sdX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chores" image="chores" id="VRh-WI-Ttk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gKP-f0-cZE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BTp-HF-o4m" kind="relationship" relationship="rootViewController" id="HdG-qI-upq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwX-t1-1EC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="-14"/>
+        </scene>
+        <!--Shoping List-->
+        <scene sceneID="9k4-8H-PEP">
+            <objects>
+                <tableViewController id="6zd-qc-8ag" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PE1-ho-Y4f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buyItem" id="XwO-PL-tdh" customClass="ShoppingListTableViewCell" customModule="Roomy" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XwO-PL-tdh" id="gHu-yT-eCz">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEF-VA-iCq">
+                                            <rect key="frame" x="18" y="12" width="32" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="St6-wq-hUS">
+                                            <rect key="frame" x="549" y="6" width="33" height="32"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <state key="normal" title="Paid">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gEF-VA-iCq" firstAttribute="leading" secondItem="gHu-yT-eCz" secondAttribute="leadingMargin" constant="10" id="FeI-3X-0Os"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="St6-wq-hUS" secondAttribute="trailing" constant="10" id="TpC-v7-5mh"/>
+                                        <constraint firstAttribute="centerY" secondItem="gEF-VA-iCq" secondAttribute="centerY" id="Y4I-FB-fS2"/>
+                                        <constraint firstAttribute="centerY" secondItem="St6-wq-hUS" secondAttribute="centerY" id="jwn-ki-zp3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ShoppingItemButton" destination="St6-wq-hUS" id="QNg-Ou-2wv"/>
+                                    <outlet property="ShoppingItemTitle" destination="gEF-VA-iCq" id="KC7-po-kmN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6zd-qc-8ag" id="wev-gq-jz3"/>
+                            <outlet property="delegate" destination="6zd-qc-8ag" id="IqP-ed-C8v"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shoping List" id="Cu8-uk-MdF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Ea-Yf-dkB"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qy8-26-Hq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688" y="648"/>
+        </scene>
+        <!--ShoppingList-->
+        <scene sceneID="SFl-e3-JA6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lh0-gR-M2K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ShoppingList" image="ShopingCart" id="oOk-VE-OCa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hvz-uJ-7Zd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6zd-qc-8ag" kind="relationship" relationship="rootViewController" id="AfL-LX-bWU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPp-em-at5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ShopingCart" width="30" height="30"/>
+        <image name="chores" width="30" height="30"/>
+    </resources>
 </document>

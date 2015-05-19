@@ -8,15 +8,23 @@
 
 import UIKit
 import CoreData
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    class var sharedAppDelegate: AppDelegate { return UIApplication.sharedApplication().delegate as! AppDelegate }
 
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        Parse.enableLocalDatastore()
+        
+        Parse.setApplicationId("BleA4xgdWirKOx6TIAih869F9SP4vLIbAeFB1mBR",
+            clientKey: "ZXooug9yqXNZKc7thf39UyzVlS74qsBpingU2GW7")
+        
         return true
     }
 
@@ -49,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "hu.bme.aut.Roomy" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
